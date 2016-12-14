@@ -100,7 +100,7 @@ function EffectCustom3x3(source,destination,maskbits,divisor,addition){
 
 // リサンプリング
 // interpolationfilter : 補間フィルターの関数を指定する
-// prefilter           : [省略可能]事前フィルタ(ぼかし)  true/false/null 
+// prefilter           : [省略可能]事前フィルタ(ぼかし)  true or false(null) 
 // ※事前フィルタを実施すると高品質に縮小する事が可能です。拡大では逆に品質が落ちます。
 // ※関数を呼び出す前にリサイズするサイズをdestinationのwidth/heightに設定します。
 function EffectResampling(source,destination,interpolationfilter,prefilter){
