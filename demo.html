@@ -1,0 +1,52 @@
+<script src="resampling.js"></script>
+<button onclick="double();" style="font-size:32px;">size * 2</button> 
+<button onclick="half();" style="font-size:32px;">size * 0.5(50%)</button>
+<p>[Original image]</p>
+<img id="SrcImage" src="test.png">
+<p>[High Quality scaling image]</p>
+<canvas id="DstCanvas"></canvas>
+<script>
+  var src_img = document.getElementById("SrcImage");
+  var dst_canvas = document.getElementById("DstCanvas");
+  var dst_ctx = dst_canvas.getContext("2d");    
+  
+  function double(){  
+        
+    // Drawing original image (元画像の描画)
+    dst_canvas.width  = src_img.width;
+    dst_canvas.height = src_img.height;        
+    dst_ctx.drawImage(src_img,0,0); 
+    
+    // Generate ImageData (ImageDataの生成)
+    var source = dst_ctx.getImageData(0,0,dst_canvas.width,dst_canvas.height); 
+    dst_canvas.width  = (src_img.width) * 2; 
+    dst_canvas.height = (src_img.height)* 2;          
+    var destination = dst_ctx.createImageData(dst_canvas.width,dst_canvas.height); 
+    
+    // Perform scaling (拡大縮小の実行)
+    EffectResampling(source,destination,BiCubic_Filter,false);
+    
+    // Draw to canvas (canvasへ描画)
+    dst_ctx.putImageData(destination,0,0);
+  }  
+  
+  function half(){  
+        
+    // Drawing original image (元画像の描画)
+    dst_canvas.width  = src_img.width;
+    dst_canvas.height = src_img.height;        
+    dst_ctx.drawImage(src_img,0,0); 
+    
+    // Generate ImageData (ImageDataの生成)
+    var source = dst_ctx.getImageData(0,0,dst_canvas.width,dst_canvas.height); 
+    dst_canvas.width  = Math.round((src_img.width)  * 0.5); 
+    dst_canvas.height = Math.round((src_img.height) * 0.5);          
+    var destination = dst_ctx.createImageData(dst_canvas.width,dst_canvas.height); 
+    
+    // Perform scaling (拡大縮小の実行)
+    EffectResampling(source,destination,BiCubic_Filter,true);
+    
+    // Draw to canvas (canvasへ描画)
+    dst_ctx.putImageData(destination,0,0);
+  }    
+</script>
