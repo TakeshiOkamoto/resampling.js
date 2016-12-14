@@ -4,6 +4,11 @@ High quality resampling (Image scaling), with pure JavaScript.
 
 ## How to use 
 
+Japanese  
+[http://www.petitmonte.com/javascript/howto_resampling_js.html](http://www.petitmonte.com/javascript/howto_resampling_js.html)  
+
+English
+
 function EffectResampling(source, destination, interpolationfilter, prefilter)
 
 | Argument | Contents |
