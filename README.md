@@ -1,5 +1,5 @@
 # resampling.js
-High quality resampling (Image scaling)
+High quality resampling (Image scaling).
 
 
 ## How to use 
