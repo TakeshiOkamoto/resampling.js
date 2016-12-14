@@ -9,7 +9,7 @@ function EffectResampling(source, destination, interpolationfilter, prefilter)
 | Argument | Contents |
 |:-----------|:-------------|
 | source | ImageData Object |
-| destination | ImageData Object |
+| destination | ImageData Object (return value) |
 | interpolationfilter | Always "BiCubic_Filter" |
 | prefilter | true or false ... Use "true" only when reducing the image |
 Set width / height of "destination" before calling the function.    
