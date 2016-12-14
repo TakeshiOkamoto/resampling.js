@@ -21,6 +21,7 @@ Set width / height of "destination" before calling the function.
 
 ## Caution
 If the HTML file is not uploaded to the server, it may not work depending on browser specifications.
+HTML5 Web Woker makes it multi-threaded and faster.
 
 ## Contact
 sorry, no warranty, no support. English Can understand only 3-year-old level.  
